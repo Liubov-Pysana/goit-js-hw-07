@@ -25,7 +25,6 @@ const images = [
     },
 ];
 
-// <li><img src="" alt=""/></li>
 const gallery = document.querySelector(".gallery");
 // images.forEach((image) => {
 //     // v1
@@ -35,7 +34,10 @@ const gallery = document.querySelector(".gallery");
 //     gallery.append(imageElement);
 // });
 
+let allItems = "";
 images.forEach((image) => {
     // v2
-    gallery.insertAdjacentHTML("beforeend", `<img src='${image.url}' alt='${image.alt}' />`);
+    allItems += `<li><img src='${image.url}' alt='${image.alt}' /></li>`;
 });
+
+gallery.insertAdjacentHTML("beforeend", allItems);

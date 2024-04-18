@@ -24,13 +24,15 @@ function destroyBoxes() {
 function createBoxes(amount) {
     destroyBoxes();
     const size = 30;
+    const allBoxes = [];
     for (let i = 0; i < amount; i++) {
         const box = document.createElement("div");
         box.style.width = size + i * 10 + "px";
         box.style.height = size + i * 10 + "px";
         box.style.backgroundColor = getRandomHexColor();
-        boxes.append(box);
+        allBoxes.push(box);
     }
+    boxes.append(...allBoxes);
 }
 
 function getRandomHexColor() {
